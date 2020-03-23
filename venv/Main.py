@@ -26,11 +26,21 @@ def next(arr, char, player):
     arr[choice - 1] = char
 
 def check(arr, char, player):
-    if arr[0] == arr[1] == arr[2] == char or arr[3] == arr[4] == arr[5] == char or arr[6] == arr[7] == arr[8] == char or arr[0] == arr[3] == arr[6] == char or arr[1] == arr[4] == arr[7] == char or arr[2] == arr[5] == arr[8] == char or arr[0] == arr[4] == arr[8] == char or arr[2] == arr[4] == arr[6] == char:
-        print("Player: " + player + " Win!")
-        return True
-    else:
-        return False
+    array = [(0, 1, 2),
+             (3, 4, 5),
+             (6, 7, 8),
+             (0, 3, 6),
+             (1, 4, 7),
+             (2, 5, 8),
+             (0, 4, 8),
+             (2, 4, 6)]
+
+    for t in array:
+        if arr[t[0]] == arr[t[1]] == arr[t[2]] == char:
+            print("Player: " + player + " Win!")
+            return True
+
+    return False
 
 
 
